@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alpine-js-test-vite</title>
+    <link href="/src/style.css" rel="stylesheet" />
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <section class="mt-8 max-w-[1000px] w-full mx-auto overflow-x-clip">
+      <h2 class="text-2xl text-gray-800">Hamberger menu</h2>
+      <header
+        class="w-full bg-gray-200 py-2 px-4 mt-4 relative"
+        x-data="hamberger"
+      >
+        <h1 class="text-xl text-gray-800">logo</h1>
+        <button
+          type="button"
+          class="w-6 h-6 bg-transparent border-none flex flex-col items-center justify-center cursor-pointer absolute top-[0.7rem] right-4 z-99"
+          :class="isOpen ? 'gap-0' : 'gap-1.5'"
+          x-on:click="handleClick()"
+        >
+          <span
+            class="w-full h-px bg-gray-900 transition-all duration-300 ease-in-out"
+            :class="isOpen ? 'rotate-45 translate-y-0.5' : ''"
+          ></span>
+          <span
+            class="w-full h-px bg-gray-900 transition-all duration-300 ease-in-out"
+            :class="isOpen ? 'opacity-0' : ''"
+          ></span>
+          <span
+            class="w-full h-px bg-gray-900 transition-all duration-300 ease-in-out"
+            :class="isOpen ? '-rotate-45 -translate-y-px' : ''"
+          ></span>
+        </button>
+
+        <div
+          class="absolute bg-gray-400 top-0 right-0 w-[30%] z-9 h-[300px] flex items-center p-6 transition-transform duration-300 ease-in-out"
+          :class="isOpen ? 'translate-x-0' : 'translate-x-full'"
+        >
+          <nav>
+            <ul class="grid gap-2">
+              <li class="list-none"><a href="" class="text-white">Home</a></li>
+              <li class="list-none"><a href="" class="text-white">About</a></li>
+              <li class="list-none">
+                <a href="" class="text-white">Service</a>
+              </li>
+              <li class="list-none">
+                <a href="" class="text-white">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </section>
+  </body>
+</html>

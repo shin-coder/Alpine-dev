@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body>
+    <section class="section">
+      <h2 class="section-title section-head">Hamberger menu</h2>
+      <header class="se1-header" x-data="{ isOpen: false }">
+        <h1 class="sec1-logo">logo</h1>
+        <button
+          type="button"
+          class="sec1-ham-btn"
+          x-bind:class="{ 'is-active': isOpen }"
+          x-on:click="isOpen = !isOpen"
+        >
+          <span class="sec1-ham-bar"></span>
+          <span class="sec1-ham-bar"></span>
+          <span class="sec1-ham-bar"></span>
+        </button>
+
+        <div class="sec1-nav-container" :class="{ 'is-open': isOpen }">
+          <nav class="sec1-nav">
+            <ul class="sec1-nav-lists">
+              <li class="sec1-nav-item"><a href="">Home</a></li>
+              <li class="sec1-nav-item"><a href="">About</a></li>
+              <li class="sec1-nav-item"><a href="">Service</a></li>
+              <li class="sec1-nav-item"><a href="">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </section>
+  </body>
+</html>
