@@ -10,7 +10,7 @@ A simple version implemented with HTML/CSS.
 
 **Description:**
 
-- Loads Alpine.js["https://alpinejs.dev/"] via CDN
+- Loads [Alpine.js](https://alpinejs.dev/) via CDN
 
 ### tailwind-typescript-dev
 
